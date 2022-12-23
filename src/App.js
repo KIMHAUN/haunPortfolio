@@ -1,13 +1,16 @@
 import "./App.css";
 import { useState } from "react";
-import { Button, Navbar, Container, Nav, Row, Col } from "react-bootstrap";
+import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import bg from "./img/bg.png";
 import data from "./data";
+import axios from "axios";
+
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail";
 
 function App() {
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
+
   let navigate = useNavigate(); //hook : 유용한 정보가 들어있는 함수
 
   return (
@@ -46,7 +49,7 @@ function App() {
           </Nav>
         </Container>
         <Link to="/"> 홈 </Link>
-        <Link to="/detail"> 상세 페이지</Link>
+        <Link to="/detail/0"> 상세 페이지</Link>
       </Navbar>
 
       <Routes>
@@ -60,13 +63,13 @@ function App() {
               ></div>
               <Row>
                 {shoes.map(function (a, i) {
-                  console.log(shoes[i].title);
                   let img =
                     "https://codingapple1.github.io/shop/shoes" +
                     (parseInt(i) + 1) +
                     ".jpg";
                   return (
                     <Item
+                      i={i}
                       title={shoes[i].title}
                       content={shoes[i].content}
                       price={shoes[i].price}
@@ -75,6 +78,28 @@ function App() {
                   );
                 })}
               </Row>
+              <br />
+              <button
+                onClick={() => {
+                  //로딩중 UI 띄우기
+                  axios
+                    .get("https://codingapple1.github.io/shop/data2.json")
+                    .then((data) => {
+                      let copiedShoes = [...shoes, ...data.data];
+                      //copiedShoes.push(...data.data);
+                      setShoes(copiedShoes);
+                      //로딩중 UI숨기기~
+                    })
+                    .catch(() => {
+                      //로딩중 UI 숨기기~
+                      console.log("실패");
+                    });
+
+                  //axios.post("/url", { name: "kim" });
+                }}
+              >
+                더보기
+              </button>
             </>
           }
         />
@@ -91,8 +116,14 @@ function App() {
 }
 
 function Item(props) {
+  let navigate = useNavigate();
   return (
-    <Col sm>
+    <Col
+      sm
+      onClick={() => {
+        navigate("/detail/" + [props.i]);
+      }}
+    >
       <img src={props.src} width="80%" />
       <h4>{props.title}</h4>
       <p>{props.content}</p>

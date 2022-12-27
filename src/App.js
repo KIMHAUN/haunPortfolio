@@ -1,15 +1,19 @@
 import "./App.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import bg from "./img/bg.png";
 import data from "./data";
 import axios from "axios";
-
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Detail from "./pages/Detail";
+import Cart from "./pages/Cart";
+
+//context : state 보관함
+export let Context1 = createContext();
 
 function App() {
   let [shoes, setShoes] = useState(data);
+  let [재고, 재고변경] = useState([10, 11, 12]);
 
   let navigate = useNavigate(); //hook : 유용한 정보가 들어있는 함수
 
@@ -103,12 +107,22 @@ function App() {
             </>
           }
         />
-        <Route path="/detail/:id" element={<Detail shoes={shoes} />} />
+        <Route
+          path="/detail/:id"
+          element={
+            <Context1.Provider>
+              {" "}
+              value={{ 재고, shoes }}
+              <Detail shoes={shoes} />
+            </Context1.Provider>
+          }
+        />
         <Route path="*" element={<div>404</div>} />
         <Route path="/about" element={<About />}>
           <Route path="member" element={<div>멤버임</div>} />
           <Route path="location" element={<div>위치정보</div>} />
         </Route>
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Container></Container>
     </div>

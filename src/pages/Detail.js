@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useEffect } from "react";
 import "../App.css";
 import { Nav } from "react-bootstrap";
+import { Context1 } from "./../App";
+import App from "../App";
 
 //css까지 안가도 js에서 스타일 적용
 //스타일이 다른 js파일로 오염되지 않음. - App.modules.css로 사용하면 오염 x (모듈화)
@@ -21,6 +23,9 @@ let Box = styled.div`
 `;
 
 export default function Detail(props) {
+  //보관함 해체
+  let { 재고, shoes } = useContext(Context1);
+
   let { id } = useParams();
   let [count, setCount] = useState(0);
   let 찾은상품 = props.shoes.find((x) => x.id == id);
@@ -114,6 +119,7 @@ export default function Detail(props) {
         </div>
       </div>
 
+      {재고}
       <Nav variant="tabs" defaultActiveKey="link1">
         <Nav.Item>
           <Nav.Link
@@ -152,15 +158,8 @@ export default function Detail(props) {
 }
 
 function TabContent({ tab }) {
-  // if (tab == 0) {
-  //   return <div>내용0</div>;
-  // } else if (tab == 1) {
-  //   return <div>내용1</div>;
-  // } else if (tab == 2) {
-  //   return <div>내용2</div>;
-  // }
-
   let [fade, setFade] = useState("");
+  let { 재고, shoes } = useContext(Context1);
   useEffect(() => {
     //end를 부착해주세요
     //fade state를 end로 바꿔주세요
@@ -178,7 +177,7 @@ function TabContent({ tab }) {
 
   return (
     <div className={`start ${fade}`}>
-      {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][tab]}
+      {[<div>{재고}</div>, <div>내용1</div>, <div>내용2</div>][tab]}
     </div>
   );
 }

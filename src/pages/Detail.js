@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useContext, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import "../App.css";
 import { Nav } from "react-bootstrap";
 import { Context1 } from "./../App";
+import { order } from "./../store";
 import App from "../App";
 
 //css까지 안가도 js에서 스타일 적용
@@ -25,16 +27,19 @@ let Box = styled.div`
 export default function Detail(props) {
   //보관함 해체
   let { 재고, shoes } = useContext(Context1);
-
   let { id } = useParams();
   let [count, setCount] = useState(0);
   let 찾은상품 = props.shoes.find((x) => x.id == id);
   let [할인, set할인] = useState(true);
   let [경고, 경고변경] = useState(false);
-  let [num, setNum] = useState("");
+  let [num, setNum] = useState(0);
   let numeric = /^[0-9]+$/;
   let [tab, setTab] = useState(0);
   let [fade, setFade] = useState("");
+
+  let cart = useSelector((state) => state.cart);
+  let state = useSelector((state) => state);
+  let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
 
   useEffect(() => {
     //mount, update시 코드 실행
@@ -94,16 +99,16 @@ export default function Detail(props) {
           <div className="alert alert-danger">그러지 마세요!!</div>
         ) : null}
 
-        <input
+        {/* <input
           onChange={(e) => {
             setNum(e.target.value);
           }}
-        />
+        /> */}
 
         <input
           onChange={(e) => {
             let input = e.target.value;
-            if (!numeric.test(input)) {
+            if (!numeric.test(input) && input) {
               console.log("숫자 아님!");
               경고변경(true);
             } else {
@@ -112,10 +117,20 @@ export default function Detail(props) {
           }}
         />
         <div className="col-md-6">
-          <h4 className="pt-5">{찾은상품.title}</h4>
+          <h4 className="pt-5">{찾은상품.name}</h4>
           <p>{props.shoes[id].content}</p>
           <p>{props.shoes[id].price}</p>
-          <button className="btn btn-danger">주문하기</button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              //console.log("찾은 상품" + JSON.stringify({ 찾은상품 }));
+              //dispatch(order({ 찾은상품 }.찾은상품));
+              dispatch(order({ id: id, name: props.shoes[id].name, count: 1 }));
+              console.log(state.cart);
+            }}
+          >
+            주문하기
+          </button>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import "./App.css";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import bg from "./img/bg.png";
 import data from "./data";
@@ -12,9 +12,17 @@ import Cart from "./pages/Cart";
 export let Context1 = createContext();
 
 function App() {
+  useEffect(() => {
+    localStorage.setItem("watched", JSON.stringify([]));
+  }, []);
+
+  let obj = { name: "kim" };
+  localStorage.setItem("data", JSON.stringify(obj));
+  let 꺼낸거 = localStorage.getItem("data");
+  console.log(JSON.parse(꺼낸거));
+
   let [shoes, setShoes] = useState(data);
   let [재고, 재고변경] = useState([10, 11, 12]);
-
   let navigate = useNavigate(); //hook : 유용한 정보가 들어있는 함수
 
   return (
@@ -38,7 +46,7 @@ function App() {
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/detail");
+                navigate("/cart");
               }}
             >
               Cart
@@ -73,8 +81,9 @@ function App() {
                     ".jpg";
                   return (
                     <Item
+                      key={i}
                       i={i}
-                      title={shoes[i].title}
+                      title={shoes[i].name}
                       content={shoes[i].content}
                       price={shoes[i].price}
                       src={img}
@@ -110,9 +119,7 @@ function App() {
         <Route
           path="/detail/:id"
           element={
-            <Context1.Provider>
-              {" "}
-              value={{ 재고, shoes }}
+            <Context1.Provider value={{ 재고, shoes }}>
               <Detail shoes={shoes} />
             </Context1.Provider>
           }

@@ -56,12 +56,20 @@ export default function Detail(props) {
       set할인(false);
     }, 2000);
 
+    let 최근본상품 = JSON.parse(localStorage.getItem("watched"));
+    //console.log(최근본상품);
+    최근본상품.push(id);
+    const set = new Set(최근본상품);
+    console.log(최근본상품);
+    localStorage.setItem("watched", JSON.stringify(Array.from(set)));
+
     return () => {
       //기존 타이머는 제거해주세요. cleanup function 기존 코드 치우는 거 작성.
       clearTimeout(timer); //타이머 제거해주는 함수.
       clearTimeout(a); //타이머 제거해주는 함수.
     }; //useEffect동작 전에 실행되는 return()=>{}
   }, []); //count라는 state가 변할 때만 실행됨 - []는 해당 컴포넌트가 mount될 때 1회, 아무것도 없을 때는 mount, update될 때
+
   useEffect(() => {
     if (isNaN(num) == true) {
       alert("그러지 마세요");

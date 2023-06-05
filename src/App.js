@@ -17,11 +17,11 @@ const Cart = lazy(() => import("./pages/Cart.js"));
 export let Context1 = createContext();
 
 function App() {
-  useEffect(() => {
-    if (localStorage.getItem("watched").length == 0) {
-      localStorage.setItem("watched", JSON.stringify([]));
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("watched").length == 0) {
+  //     localStorage.setItem("watched", JSON.stringify([]));
+  //   }
+  // }, []);
 
   let obj = { name: "kim" };
   localStorage.setItem("data", JSON.stringify(obj));
@@ -56,7 +56,7 @@ function App() {
               navigate("/");
             }}
           >
-            연팽
+            Profile
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link
@@ -64,21 +64,28 @@ function App() {
                 navigate("/");
               }}
             >
-              Home
+              HOME
             </Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate("/cart");
               }}
             >
-              Cart
+              PORTFOLIO
             </Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate("/about");
               }}
             >
-              About
+              ABOUT
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/about");
+              }}
+            >
+              CONTACT
             </Nav.Link>
           </Nav>
           <Nav className="ms-auto">

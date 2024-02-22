@@ -58,7 +58,7 @@ export default function Detail(props) {
 
     let 최근본상품 = JSON.parse(localStorage.getItem("watched"));
     //console.log(최근본상품);
-    최근본상품.push(id);
+    //최근본상품.push(id);
     const set = new Set(최근본상품);
     console.log(최근본상품);
     localStorage.setItem("watched", JSON.stringify(Array.from(set)));
@@ -104,7 +104,7 @@ export default function Detail(props) {
           />
         </div>
         {경고 == true ? (
-          <div className="alert alert-danger">그러지 마세요!!</div>
+          <div className="alert alert-danger">그러지 마!</div>
         ) : null}
 
         {/* <input

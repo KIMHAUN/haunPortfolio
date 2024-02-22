@@ -1,7 +1,7 @@
 import "./App.css";
 import { createContext, Suspense, useEffect, useState, lazy } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
-import bg from "./img/bg.png";
+import bg from "./img/profile.jpg";
 import data from "./data";
 import axios from "axios";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
@@ -12,13 +12,18 @@ import { useQuery } from "react-query";
 
 const Detail = lazy(() => import("./pages/Detail.js"));
 const Cart = lazy(() => import("./pages/Cart.js"));
+const Projects = lazy(() => import("./pages/Projects.js"));
+const AboutMe = lazy(() => import("./pages/AboutMe.js"));
+const Contact = lazy(() => import("./pages/Contact.js"));
 
 //context : state 보관함
 export let Context1 = createContext();
 
+
 function App() {
   // useEffect(() => {
   //   if (localStorage.getItem("watched").length == 0) {
+    
   //     localStorage.setItem("watched", JSON.stringify([]));
   //   }
   // }, []);
@@ -56,36 +61,43 @@ function App() {
               navigate("/");
             }}
           >
-            Profile
+            Haeun Kim
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link
               onClick={() => {
-                navigate("/");
+                navigate("/aboutMe");
               }}
             >
-              HOME
+              About Me
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/cart");
+                navigate("/projects");
               }}
             >
-              PORTFOLIO
-            </Nav.Link>
-            <Nav.Link
-              onClick={() => {
-                navigate("/about");
-              }}
-            >
-              ABOUT
+              Projects
             </Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate("/about");
               }}
             >
-              CONTACT
+              Challenge
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/contact");
+              }}
+            >
+              Contact
+            </Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("/about");
+              }}
+            >
+              E.T.C.
             </Nav.Link>
           </Nav>
           <Nav className="ms-auto">
@@ -97,16 +109,17 @@ function App() {
         <Link to="/"> 홈 </Link>
         <Link to="/detail/0"> 상세 페이지</Link>
       </Navbar>
-      <Suspense fallback={<div>로딩중임</div>}>
+      <div
+        className="main-bg"
+        style={{ backgroundImage: "url(" + bg + ")" }}
+      ></div>
+      { <Suspense fallback={<div>로딩중임</div>}>
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <div
-                  className="main-bg"
-                  style={{ backgroundImage: "url(" + bg + ")" }}
-                ></div>
+                
                 <Row>
                   {shoes.map(function (a, i) {
                     let img =
@@ -159,13 +172,13 @@ function App() {
             }
           />
           <Route path="*" element={<div>404</div>} />
-          <Route path="/about" element={<About />}>
-            <Route path="member" element={<div>멤버임</div>} />
-            <Route path="location" element={<div>위치정보</div>} />
-          </Route>
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/aboutMe" element={<AboutMe />} />
+          <Route path="member" element={<div>멤버임</div>} />
+          <Route path="location" element={<div>위치정보</div>} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-      </Suspense>
+      </Suspense> }
       <Container></Container>
     </div>
   );

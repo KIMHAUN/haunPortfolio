@@ -1,9 +1,8 @@
 import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { setAge } from "./../store/userSlice";
-import { setStock, deleteItem } from "./../store";
+import { setAge } from "../store/userSlice";
+import { setStock, deleteItem } from "../store";
 import { useState, memo, useMemo, useTransition } from "react";
-
 
 //memo : 꼭 필요할 때만 재랜더링함.- 특정 상황 : 전달하는 props가 변할 때만
 //무거운 컴포넌트. 대부분 안씀
@@ -15,6 +14,16 @@ let Child = memo(function () {
 function 함수() {
   //
 }
+
+const introduceMsg = `
+Hello, My name is Haeun Kim. I'm Korean.
+I'm a Computer science graduate with a strong passion to work in the develop industry.
+I worked as a web developer for 4 years.
+My skills include knowledge of programming languages and good communication.
+I think completing my duties thoroughly first is the starting point of all success.
+I am a optimistic person who believes that every problem has its solution.
+I would describe myself as a person of action because I do what I say I will.
+`
 
 function Cart() {
   //redux store가져와줌
@@ -31,6 +40,7 @@ function Cart() {
 
   return (
     <div>
+      <pre>{introduceMsg}</pre>
       <Child count={count}></Child>
       <button
         onClick={() => {

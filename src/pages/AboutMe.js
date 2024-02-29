@@ -16,7 +16,15 @@ function 함수() {
 }
 
 const introduceMsg = `
-Hello, My name is Haeun Kim. I'm Korean.
+Hello, My name is Haeun Kim.
+
+I worked as a web developer for 4 years using java, react
+
+I made some application by kotlin and flutter personally.
+
+I prefer frontend development because I enjoy creating pretty interface.
+
+
 I'm a Computer science graduate with a strong passion to work in the develop industry.
 I worked as a web developer for 4 years.
 My skills include knowledge of programming languages and good communication.
@@ -40,7 +48,7 @@ function Cart() {
 
   return (
     <div>
-      <pre>{introduceMsg}</pre>
+      
       <Child count={count}></Child>
       <button
         onClick={() => {
@@ -97,7 +105,7 @@ function Cart() {
           ))}
         </tbody>
       </Table>
-      
+      <pre>{introduceMsg}</pre>
     </div>
   );
 }

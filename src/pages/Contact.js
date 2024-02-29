@@ -53,6 +53,8 @@ function Cart() {
     <div>
       <h3>Email</h3>
       <p>wha02068@gmail.com</p>
+      <h3>LinkedIn</h3>
+      <p>wha02068@gmail.com</p>
 
     </div>
   );

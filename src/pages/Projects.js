@@ -1,11 +1,17 @@
-import { Table } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import { setAge } from "../store/userSlice";
 import { setStock, deleteItem } from "../store";
 import { useState, memo, useMemo, useTransition } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
-
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
 
 //memo : 꼭 필요할 때만 재랜더링함.- 특정 상황 : 전달하는 props가 변할 때만
 //무거운 컴포넌트. 대부분 안씀
@@ -17,38 +23,6 @@ let Child = memo(function () {
 function 함수() {
   //
 }
-const data = useMemo(
-  () => [
-    {
-      menu: "라면",
-      price: "500원",
-    },
-    {
-      menu: "김밥",
-      price: "200원",
-    },
-    {
-      menu: "오뎅",
-      price: "300원",
-    },
-  ],
-  []
-);
-
-const columns = useMemo(
-  () => [
-    {
-      Header: "메뉴",
-      accessor: "menu", // accessor is the "key" in the data
-    },
-    {
-      Header: "가격",
-      accessor: "price",
-    },
-  ],
-  []
-);
-
 
 
 function Item(props) {
@@ -68,53 +42,65 @@ function Item(props) {
   );
 }
 
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
 
-function Cart() {
-  //redux store가져와줌
-  let cart = useSelector((state) => state.cart);
-  let state = useSelector((state) => state);
-  let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
-  let [count, setCount] = useState(0);
-  
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
 
-  //컴포넌트 랜드링시 1회만 실행. (=useEffect랑 비슷함. 실행시점 차이)
-  useMemo(() => {
-    return 함수();
-  }, [state]);
-
-  return (
-    <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                
-                <Row>
-                  aaa
-                </Row>
-                <br />
-                <button
-                  onClick={() => {
-                  
-                  }}
-                >
-                  더보기
-                </button>
-              </>
-            }
-          />
-          <Route
-            path="/detail/:id"
-           
-          />
-          <Route path="*" element={<div>404</div>} />
-          <Route path="member" element={<div>멤버임</div>} />
-          <Route path="location" element={<div>위치정보</div>} />
-          
-          
-
-        </Routes>
-  );
+function createData(client, name, duration, task, technologies, des) {
+  return { client, name, duration, task, technologies, des};
 }
 
-export default Cart;
+const rows = [
+  createData('NeoPlus(LG U+)','Drone portal site', '2019.May ~ 19.Jul', 'Task', 'technologies', 'Description'),
+  
+];
+
+export default function BasicTable() {
+  return (
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Client</StyledTableCell>
+            <StyledTableCell align="right">Name</StyledTableCell>
+            <StyledTableCell align="right">Duration</StyledTableCell>
+            <StyledTableCell align="right">Task</StyledTableCell>
+            <StyledTableCell align="right">Technologies&nbsp;Used</StyledTableCell>
+            <StyledTableCell align="right">Description</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.client}
+              </StyledTableCell>
+              
+              <StyledTableCell align="right">{row.name}</StyledTableCell>
+              <StyledTableCell align="right">{row.duration}</StyledTableCell>
+              <StyledTableCell align="right">{row.task}</StyledTableCell>
+              <StyledTableCell align="right">{row.technologies}</StyledTableCell>
+              <StyledTableCell align="right">{row.des}</StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+}

@@ -19,8 +19,8 @@
 }
 
 .main-bg {
-  height: 1000px;
-  width: 380px;
+  height: 200px;
+  width: 100%;
   float:left;
   /* background-image: url(./img/bg.png); */
   background-size: cover;

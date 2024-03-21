@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setAge } from "../store/userSlice";
 import { setStock, deleteItem } from "../store";
 import { useState, memo, useMemo, useTransition } from "react";
+import profile from "../img/profile.jpg";
 
 //memo : 꼭 필요할 때만 재랜더링함.- 특정 상황 : 전달하는 props가 변할 때만
 //무거운 컴포넌트. 대부분 안씀
@@ -49,25 +50,25 @@ function Cart() {
   return (
     <div>
       
-      <Child count={count}></Child>
-      <button
+      {/* <Child count={count}></Child> */}
+      {/* <button
         onClick={() => {
           setCount(count + 1);
         }}
       >
         +
-      </button>
-      <h6>
+      </button> */}
+      {/* <h6>
         {state.user.name}({state.user.age})의 장바구니
-      </h6>
-      <button
+      </h6> */}
+      {/* <button
         onClick={() => {
           dispatch(setAge(100));
         }}
       >
         노화 버튼
-      </button>
-      <Table>
+      </button> */}
+      {/* <Table>
         <thead>
           <tr>
             <th>#</th>
@@ -104,8 +105,25 @@ function Cart() {
             </tr>
           ))}
         </tbody>
-      </Table>
-      <pre>{introduceMsg}</pre>
+      </Table> */}
+      <div
+        className="profile-img"
+        style={{ backgroundImage: "url(" + profile + ")" }}
+      ></div>
+      <div class="content">
+        <span class="boldText">Hello!</span>
+        <br/>
+        I worked as a web developer for 4 years using <span class="boldText">java, react</span> 
+        <br/>
+        I made some application by kotlin and flutter personally.
+        <br/>
+        I prefer frontend development because I enjoy creating pretty interface.
+        <br/>
+        <h3>
+           함께 열심히 달려봐요! 🤙
+        </h3>
+       
+      </div>
     </div>
   );
 }

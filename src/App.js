@@ -1,7 +1,8 @@
 import "./App.css";
 import { createContext, Suspense, useEffect, useState, lazy } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
-import bg from "./img/profile.jpg";
+import bg from "./img/dinosours.jpg";
+import profile from "./img/profile.jpg";
 import data from "./data";
 import axios from "axios";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
@@ -119,8 +120,33 @@ function App() {
             path="/"
             element={
               <>
-                
-                <Row>
+                    <div
+                      className="profile-img"
+                      style={{ backgroundImage: "url(" + profile + ")" }}
+                    ></div>
+                    <div class="content">
+                      <span class="boldText">Thanks for coming!🙌 </span>
+                      <br/>
+                      My name is <span class="boldText">Hannah</span> 
+                      <br/>
+                      I'm born and bred in Korea.
+                      <br/>
+                      <br/>
+                      My father was a teacher at a computer academy.
+                      <br/>
+                      and due to my fast typing speed, I was able to learn coding quickly. 
+                      <br/>
+                      As a result, I switched majors from corrections to computer science
+                      <br/>
+                      and even took on the role of a teaching assistant.
+                      <br/>
+                      I became the first protege of the compiler professor.🎈                     
+                      <br/>
+                      <br/>
+                      I made this blog for introducing myself.
+                    
+                    </div>
+                {/* <Row>
                   {shoes.map(function (a, i) {
                     let img =
                       "https://codingapple1.github.io/shop/shoes" +
@@ -137,7 +163,7 @@ function App() {
                       ></Item>
                     );
                   })}
-                </Row>
+                </Row> */}
                 <br />
                 <button
                   onClick={() => {

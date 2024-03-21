@@ -23,10 +23,18 @@
   width: 100%;
   float:left;
   /* background-image: url(./img/bg.png); */
-  background-size: cover;
+  /* background-size: cover; */
   background-position: center;
 }
 
+.profile-img {
+  height: 758px;
+  width: 30%;
+  float:left;
+  /* background-image: url(./img/bg.png); */
+  background-size: cover;
+  background-position: left;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -55,4 +63,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.content{
+  font-size: 18px;
+  text-align: left;
+  float:left;
+  margin:30px;
+}
+
+.content > .boldText {
+  font-weight: 600;
+  color:#5f3dc4 ;
 }

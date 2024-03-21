@@ -68,6 +68,7 @@ function createData(client, name, duration, task, technologies, des) {
 
 const rows = [
   createData('NeoPlus(LG U+)','Drone portal site', '2019.May ~ 19.Jul', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','Roaming giftcard admin ', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
   
 ];
 

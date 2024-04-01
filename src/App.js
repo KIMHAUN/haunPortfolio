@@ -2,7 +2,7 @@ import "./App.css";
 import { createContext, Suspense, useEffect, useState, lazy } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import bg from "./img/dinosours.jpg";
-import profile from "./img/profile.jpg";
+import profile from "./img/circledprofile.png";
 import data from "./data";
 import axios from "axios";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
@@ -104,48 +104,49 @@ function App() {
           <Nav className="ms-auto">
             {result.isLoading && "로딩중"}
             {result.error && "에러남"}
-            {result.data && result.data.name}
+            {/* {result.data && result.data.name} */}
           </Nav>
         </Container>
-        <Link to="/"> 홈 </Link>
-        <Link to="/detail/0"> 상세 페이지</Link>
+        {/* <Link to="/"> 홈 </Link>
+        <Link to="/detail/0"> 상세 페이지</Link> */}
       </Navbar>
       <div
         className="main-bg"
         style={{ backgroundImage: "url(" + bg + ")" }}
       ></div>
-      { <Suspense fallback={<div>로딩중임</div>}>
+           
+      { <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route
             path="/"
             element={
-              <>
-                    <div
-                      className="profile-img"
-                      style={{ backgroundImage: "url(" + profile + ")" }}
-                    ></div>
-                    <div class="content">
-                      <span class="boldText">Thanks for coming!🙌 </span>
-                      <br/>
-                      My name is <span class="boldText">Hannah</span> 
-                      <br/>
-                      I'm born and bred in Korea.
-                      <br/>
-                      <br/>
-                      My father was a teacher at a computer academy.
-                      <br/>
-                      and due to my fast typing speed, I was able to learn coding quickly. 
-                      <br/>
-                      As a result, I switched majors from corrections to computer science
-                      <br/>
-                      and even took on the role of a teaching assistant.
-                      <br/>
-                      I became the first protege of the compiler professor.🎈                     
-                      <br/>
-                      <br/>
-                      I made this blog for introducing myself.
-                    
-                    </div>
+              <>     
+                  <div
+                    className="profile-img"
+                    style={{ backgroundImage: "url(" + profile + ")" }}
+                  ></div>
+                  <div class="content">
+                    <span class="boldText">Thanks for coming!🙌 </span>
+                    <br/>
+                    My name is <span class="boldText">Hannah</span> 
+                    <br/>
+                    I'm born and bred in Korea.
+                    <br/>
+                    <br/>
+                    My father was a teacher at a computer academy.
+                    <br/>
+                    and due to my fast typing speed, I was able to learn coding quickly. 
+                    <br/>
+                    As a result, I switched majors from corrections to computer science
+                    <br/>
+                    and even took on the role of a teaching assistant.
+                    <br/>
+                    I became the first protege of the compiler professor.
+                    <br/>
+                    <br/>
+                    I made this blog for introducing myself.🎈🦜
+                  
+                  </div>
                 {/* <Row>
                   {shoes.map(function (a, i) {
                     let img =
@@ -165,7 +166,7 @@ function App() {
                   })}
                 </Row> */}
                 <br />
-                <button
+                {/* <button
                   onClick={() => {
                     //로딩중 UI 띄우기
                     axios
@@ -185,7 +186,7 @@ function App() {
                   }}
                 >
                   더보기
-                </button>
+                </button> */}
               </>
             }
           />

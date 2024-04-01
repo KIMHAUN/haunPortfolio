@@ -54,7 +54,7 @@ function Cart() {
       <h3>Email</h3>
       <p>wha02068@gmail.com</p>
       <h3>LinkedIn</h3>
-      <p>wha02068@gmail.com</p>
+      <a href="https://www.linkedin.com/in/haeun-kim-4758a7249/" target="_blank">https://www.linkedin.com/in/haeun-kim-4758a7249/</a>
 
     </div>
   );

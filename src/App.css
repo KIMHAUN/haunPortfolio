@@ -1,3 +1,13 @@
+div {
+  box-sizing : border-box;
+}
+body {
+  margin : 0;
+}
+html {
+  line-height : 1.15;/*기본 행간 높이*/
+}
+
 .start {
   opacity: 0;
   
@@ -22,19 +32,25 @@
   height: 200px;
   width: 100%;
   float:left;
+  margin-bottom:10px;
   /* background-image: url(./img/bg.png); */
   /* background-size: cover; */
   background-position: center;
 }
 
 .profile-img {
-  height: 758px;
-  width: 30%;
+  height: 300px;
+  width: 300px;
+  margin:10px;
+  margin-left:20px;
   float:left;
   /* background-image: url(./img/bg.png); */
   background-size: cover;
   background-position: left;
 }
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

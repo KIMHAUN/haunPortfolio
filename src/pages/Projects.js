@@ -16,7 +16,7 @@ import { styled } from '@mui/material/styles';
 //memo : 꼭 필요할 때만 재랜더링함.- 특정 상황 : 전달하는 props가 변할 때만
 //무거운 컴포넌트. 대부분 안씀
 let Child = memo(function () {
-  console.log("재랜더링");
+  //console.log("재랜더링");
   return <div>자식임</div>;
 });
 //let [projects, setProjects] = useState(data);
@@ -67,13 +67,30 @@ function createData(client, name, duration, task, technologies, des) {
 }
 
 const rows = [
-  createData('NeoPlus(LG U+)','Drone portal site', '2019.May ~ 19.Jul', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','Drone portal site', '19.May ~ 19.Jul', 'Task', 'technologies', 'Description'),
   createData('NeoPlus(LG U+)','Roaming giftcard admin ', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','U+VR server', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','U+VR UX improvement', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','U+VR service cloud solution PoC server develpment', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','U+VR Overseas export server development', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','Advancement and improvement of U+Page', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('NeoPlus(LG U+)','Advancement of micropayment', '21.Jan ~ 21.Aug', 'Task', 'technologies', 'Description'),
+
+  createData('Ntels', 'MEO Portal', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('Ntels', 'MEO Portal', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('Ntels', 'ATOM - PCF', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('Ntels', 'ATOM-IP/MDN', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('Ntels', '', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('Ntels', '', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+  createData('Ntels', '', '2019.Sep ~ 19.Nov', 'Task', 'technologies', 'Description'),
+
+  
   
 ];
 
 export default function BasicTable() {
   return (
+    <div style={{ padding:'10px' }}>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
@@ -103,5 +120,6 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 }

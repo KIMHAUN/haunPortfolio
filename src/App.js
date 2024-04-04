@@ -62,7 +62,7 @@ function App() {
               navigate("/");
             }}
           >
-            Haeun Kim
+            Hannah Kim
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link
@@ -79,13 +79,13 @@ function App() {
             >
               Projects
             </Nav.Link>
-            <Nav.Link
+            {/* <Nav.Link
               onClick={() => {
                 navigate("/about");
               }}
             >
-              Challenge
-            </Nav.Link>
+              Challenge222
+            </Nav.Link> */}
             <Nav.Link
               onClick={() => {
                 navigate("/contact");
@@ -93,13 +93,13 @@ function App() {
             >
               Contact
             </Nav.Link>
-            <Nav.Link
+            {/* <Nav.Link
               onClick={() => {
                 navigate("/about");
               }}
             >
               E.T.C.
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Nav className="ms-auto">
             {result.isLoading && "로딩중"}
@@ -121,32 +121,32 @@ function App() {
             path="/"
             element={
               <>     
-                  <div
-                    className="profile-img"
-                    style={{ backgroundImage: "url(" + profile + ")" }}
-                  ></div>
-                  <div class="content">
-                    <span class="boldText">Thanks for coming!🙌 </span>
-                    <br/>
-                    My name is <span class="boldText">Hannah</span> 
-                    <br/>
-                    I'm born and bred in Korea.
-                    <br/>
-                    <br/>
-                    My father was a teacher at a computer academy.
-                    <br/>
-                    and due to my fast typing speed, I was able to learn coding quickly. 
-                    <br/>
-                    As a result, I switched majors from corrections to computer science
-                    <br/>
-                    and even took on the role of a teaching assistant.
-                    <br/>
-                    I became the first protege of the compiler professor.
-                    <br/>
-                    <br/>
-                    I made this blog for introducing myself.🎈🦜
-                  
-                  </div>
+                <div
+                  className="profile-img"
+                  style={{ backgroundImage: "url(" + profile + ")" }}
+                ></div>
+                <div class="content">
+                  <span class="boldText">Thanks for coming!🙌 </span>
+                  <br/>
+                  My name is <span class="boldText">Hannah</span> 
+                  <br/>
+                  I'm born and bred in Korea.
+                  <br/>
+                  <br/>
+                  My father was a teacher at a computer academy.
+                  <br/>
+                  and due to my fast typing speed, I was able to learn coding quickly. 
+                  <br/>
+                  As a result, I switched majors from corrections to computer science
+                  <br/>
+                  and even took on the role of a teaching assistant.
+                  <br/>
+                  I became the first protege of the compiler professor.
+                  <br/>
+                  <br/>
+                  I made this blog for introducing myself.🎈🦜
+                
+                </div>
                 {/* <Row>
                   {shoes.map(function (a, i) {
                     let img =

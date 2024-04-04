@@ -117,10 +117,17 @@ function Cart() {
         <br/>
         I’m a Computer Science graduate.
         <br/>
-        I made some application by kotlin and flutter personally.
+        I made some application by <span class="boldText">kotlin and flutter</span> personally.
         <br/>
         I prefer frontend development because I enjoy creating pretty interface.
         <br/>
+        All the companies I worked for were subcontractors of large telecommunication companies.
+        <br/>
+        I was involved in maintaining and developing about various websites needed by the them
+        <br/>
+        I usually lighten the atmosphere in the team.
+        <br/>
+        I’m trying to keep harmonious within the team as much as I can.
         <h3>
            
         </h3>

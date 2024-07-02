@@ -56,8 +56,8 @@ function Cart() {
       <h3>LinkedIn</h3>
       <a href="https://www.linkedin.com/in/haeun-kim-4758a7249/" target="_blank">https://www.linkedin.com/in/haeun-kim-4758a7249/</a>
       <h3>Mobile</h3>
-      <p>82+)10-9307-7194</p>
-      <p>I plan to create an Australian phone number on April 22nd.</p>
+      
+      <p>61+)491-054-006</p>
     </div>
   );
 }

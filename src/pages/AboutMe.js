@@ -5,17 +5,6 @@ import { setStock, deleteItem } from "../store";
 import { useState, memo, useMemo, useTransition } from "react";
 import profile from "../img/circledprofile.png";
 
-//memo : 꼭 필요할 때만 재랜더링함.- 특정 상황 : 전달하는 props가 변할 때만
-//무거운 컴포넌트. 대부분 안씀
-let Child = memo(function () {
-  console.log("재랜더링");
-  return <div>자식임</div>;
-});
-
-function 함수() {
-  //
-}
-
 const introduceMsg = `
 Hello, My name is Haeun Kim.
 
@@ -34,100 +23,24 @@ I am a optimistic person who believes that every problem has its solution.
 I would describe myself as a person of action because I do what I say I will.
 `
 
-function Cart() {
+function AboutMe() {
   //redux store가져와줌
   let cart = useSelector((state) => state.cart);
   let state = useSelector((state) => state);
   let dispatch = useDispatch(); //store.js로 요청 보내주는 함수
   let [count, setCount] = useState(0);
-  
-
-  //컴포넌트 랜드링시 1회만 실행. (=useEffect랑 비슷함. 실행시점 차이)
-  useMemo(() => {
-    return 함수();
-  }, [state]);
+ 
 
   return (
     <div>
       
-      {/* <Child count={count}></Child> */}
-      {/* <button
-        onClick={() => {
-          setCount(count + 1);
-        }}
-      >
-        +
-      </button> */}
-      {/* <h6>
-        {state.user.name}({state.user.age})의 장바구니
-      </h6> */}
-      {/* <button
-        onClick={() => {
-          dispatch(setAge(100));
-        }}
-      >
-        노화 버튼
-      </button> */}
-      {/* <Table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>변경하기</th>
-            <th>삭제</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cart.map((a, i) => (
-            <tr key={i}>
-              <td>{a.id}</td>
-              <td>{a.name}</td>
-              <td>{a.count}</td>
-              <td>
-                <button
-                  onClick={() => {
-                    dispatch(setStock(a.id));
-                  }}
-                >
-                  +
-                </button>
-              </td>
-              <td>
-                <button
-                  onClick={() => {
-                    dispatch(deleteItem(a));
-                  }}
-                >
-                  X
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table> */}
-      <div
-        className="profile-img"
-        style={{ backgroundImage: "url(" + profile + ")" }}
-      ></div>
+     
       <div class="content">
-        <span class="boldText">Hello!</span>
+       
         <br/>
-        I worked as a web developer for 4 years using <span class="boldText">java, react</span> 
-        <br/>
-        I’m a Computer Science graduate.
-        <br/>
-        I made some application by <span class="boldText">kotlin and flutter</span> personally.
-        <br/>
-        I prefer frontend development because I enjoy creating pretty interface.
-        <br/>
-        All the companies I worked for were subcontractors of large telecommunication companies.
-        <br/>
-        I was involved in maintaining and developing about various websites needed by the them
-        <br/>
-        I usually lighten the atmosphere in the team.
-        <br/>
-        I’m trying to keep harmonious within the team as much as I can.
+        Bachelor of  <span class="boldText">Computer Science</span> 
+        
+ 
         <h3>
            
         </h3>
@@ -137,4 +50,4 @@ function Cart() {
   );
 }
 
-export default Cart;
+export default AboutMe;

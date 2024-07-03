@@ -8,7 +8,7 @@ function About() {
             {/* Section Title */}
             <div className="container section-title" data-aos="fade-up">
             <h2>About</h2>
-            <p>Hi I’m Haeun Kim and I worked as a full stack Java developer for 4 years.And also have professional experience about react, flutter and unity.</p>
+            <p>Hi, I’m Haeun Kim and I worked as a full stack Java developer for 4 years. And also have professional experience about react, flutter and unity.</p>
             </div>{/* End Section Title */}
 
             <div className="container" data-aos="fade-up" data-aos-delay="100">
@@ -41,8 +41,7 @@ function About() {
                     </div>
                 </div>
                 <p className="py-3">
-                    Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-                    Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
+                    I’m keen to learn some new technology. Recently, I deployed a website using Next.js and elastic beanstalk, which is my favorite combination for now.And I went to React Meetup Session few days ago, so I could learn about new methods for set and map and testing tools for React.And I learned Instructions for using AWS PartyRock in AWS Meetup as well.
                 </p>
                 </div>
             </div>

@@ -19,12 +19,8 @@ function Resume() {
 
           <div className="resume-item pb-0">
             <h4>Haeun Kim</h4>
-            <p><em>Innovative and deadline-driven Software Developer with 4+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-            <ul>
-              <li>Melbourne, VIC</li>
-              <li>(61+) 491-054-006</li>
-              <li>wha02068@gmail.com</li>
-            </ul>
+            <p><em>Innovative and deadline-driven Software Developer with 4+ years of experience developing user-centered applications from initial concept to final, polished deliverable.</em></p>
+           
           </div>
 
           <h3 className="resume-title">Education</h3>
@@ -37,10 +33,23 @@ function Resume() {
           </div>
 
           <div className="resume-item">
-            <h4>Kotlin Android &amp; Graphic Design</h4>
-            <h5>2010 - 2014</h5>
-            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+            <h4>Kotlin Android</h4>
+            <h5>2020 - 2020</h5>
+            <p><em>MegaStudy IT Academy, KR</em></p>
+            <p>Application development using Kotlin and Android</p>
+          </div>
+
+          <h3 className="resume-title">Licence</h3>
+          <div className="resume-item">
+            <h4>AWS Certified Solutions Architect - Associate</h4>
+            <h5>2022</h5>
+            <p><em>Amazon</em></p>
+          </div>
+
+          <div className="resume-item">
+            <h4>SQL Developer</h4>
+            <h5>2020</h5>
+            <p><em>Korea Data Agency</em></p>
           </div>
 
         </div>

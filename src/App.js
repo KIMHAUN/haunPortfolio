@@ -11,7 +11,9 @@ import Header from './components/Header'
 
 import About from './sections/About'
 import Resume from './sections/Resume'
-
+import Skills from './sections/Skills'
+import Portfolio from './sections/Portfolio'
+import Services from './sections/Services'
 //import Detail from "./pages/Detail";
 //import Cart from "./pages/Cart";
 
@@ -168,7 +170,7 @@ function App() {
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Haeun Kim</h2>
-        <p>I'm <span className="typed" data-typed-items="Developer, Freelancer, Photographer">Developer</span><span className="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span className="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>I'm <span className="typed" data-typed-items="Developer, Freelancer, Creator">Developer</span><span className="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span className="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
     </section>{/* /Hero Section */}
@@ -186,7 +188,7 @@ function App() {
             <div className="stats-item">
               <i className="bi bi-emoji-smile"></i>
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" className="purecounter"></span>
-              <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+              <p><strong>Happy Clients</strong> <span>Meeting their needs quickly and effectively.</span></p>
             </div>
           </div>{/* End Stats Item */}
 
@@ -194,7 +196,7 @@ function App() {
             <div className="stats-item">
               <i className="bi bi-journal-richtext"></i>
               <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" className="purecounter"></span>
-              <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
+              <p><strong>Projects</strong><br/> <span>Extensive experience in telecom-related projects.</span></p>
             </div>
           </div>{/* End Stats Item */}
 
@@ -202,7 +204,7 @@ function App() {
             <div className="stats-item">
               <i className="bi bi-headset"></i>
               <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" className="purecounter"></span>
-              <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
+              <p><strong>Hours Of Support</strong> <span>From 9 AM to 5 PM</span></p>
             </div>
           </div>{/* End Stats Item */}
 
@@ -210,7 +212,7 @@ function App() {
             <div className="stats-item">
               <i className="bi bi-people"></i>
               <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" className="purecounter"></span>
-              <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
+              <p><strong>Hard Workers</strong> <span>Meeting deadlines</span></p>
             </div>
           </div>{/* End Stats Item */}
 
@@ -221,404 +223,22 @@ function App() {
     </section>{/* /Stats Section */}
 
     {/* Skills Section */}
-    <section id="skills" className="skills section light-background">
-
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>A showcase of my development skills and experience.</p>
-      </div>{/* End Section Title */}
-
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
-        <div className="row skills-content skills-animation">
-          <div className="col-lg-6">
-            <div className="progress">
-              <span className="skill"><span>Java</span> <i className="val">90%</i></span>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style={{width:"90%"}}></div>
-              </div>
-            </div>{/* End Skills Item */}
-
-            <div className="progress">
-              <span className="skill"><span>JavaScript</span> <i className="val">90%</i></span>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>{/* End Skills Item */}
-
-            <div className="progress">
-              <span className="skill"><span>React</span> <i className="val">75%</i></span>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>{/* End Skills Item */}
-
-          </div>
-
-          <div className="col-lg-6">
-
-            <div className="progress">
-              <span className="skill"><span>Flutter</span> <i className="val">80%</i></span>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>{/* End Skills Item */}
-
-            <div className="progress">
-              <span className="skill"><span>AWS</span> <i className="val">90%</i></span>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>{/* End Skills Item */}
-
-            <div className="progress">
-              <span className="skill"><span>SQL</span> <i className="val">55%</i></span>
-              <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>{/* End Skills Item */}
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>{/* /Skills Section */}
+    <Skills/>
+   {/* /Skills Section */}
     
     {/* /Resume Section */}
     <Resume/>
 
     {/* Portfolio Section */}
-    <section id="portfolio" className="portfolio section light-background">
-
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>{/* End Section Title */}
-
-      <div className="container">
-
-        <div className="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul className="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" className="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Product</li>
-            <li data-filter=".filter-branding">Branding</li>
-            <li data-filter=".filter-books">Books</li>
-          </ul>{/* End Portfolio Filters */}
-
-          <div className="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Product 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Branding 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-1.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Books 1</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Product 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-2.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Branding 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-2.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Books 2</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-3.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-3.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Product 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-3.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Branding 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-            <div className="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <div className="portfolio-content h-100">
-                <img src="assets/img/portfolio/books-3.jpg" className="img-fluid" alt=""/>
-                <div className="portfolio-info">
-                  <h4>Books 3</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" className="glightbox preview-link"><i className="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" className="details-link"><i className="bi bi-link-45deg"></i></a>
-                </div>
-              </div>
-            </div>{/* End Portfolio Item */}
-
-          </div>{/* End Portfolio Container */}
-
-        </div>
-
-      </div>
-
-    </section>{/* /Portfolio Section */}
+    {/* <Portfolio/> */}
+    {/* /Portfolio Section */}
 
     {/* Services Section */}
-    <section id="services" className="services section">
-
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>{/* End Section Title */}
-
-      <div className="container">
-
-        <div className="row gy-4">
-
-          <div className="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div className="icon flex-shrink-0"><i className="bi bi-briefcase"></i></div>
-            <div>
-              <h4 className="title"><a href="service-details.html" className="stretched-link">Lorem Ipsum</a></h4>
-              <p className="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          {/* End Service Item */}
-
-          <div className="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div className="icon flex-shrink-0"><i className="bi bi-card-checklist"></i></div>
-            <div>
-              <h4 className="title"><a href="service-details.html" className="stretched-link">Dolor Sitema</a></h4>
-              <p className="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>{/* End Service Item */}
-
-          <div className="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div className="icon flex-shrink-0"><i className="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 className="title"><a href="service-details.html" className="stretched-link">Sed ut perspiciatis</a></h4>
-              <p className="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>{/* End Service Item */}
-
-          <div className="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div className="icon flex-shrink-0"><i className="bi bi-binoculars"></i></div>
-            <div>
-              <h4 className="title"><a href="service-details.html" className="stretched-link">Magni Dolores</a></h4>
-              <p className="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>{/* End Service Item */}
-
-          <div className="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div className="icon flex-shrink-0"><i className="bi bi-brightness-high"></i></div>
-            <div>
-              <h4 className="title"><a href="service-details.html" className="stretched-link">Nemo Enim</a></h4>
-              <p className="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>{/* End Service Item */}
-
-          <div className="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div className="icon flex-shrink-0"><i className="bi bi-calendar4-week"></i></div>
-            <div>
-              <h4 className="title"><a href="service-details.html" className="stretched-link">Eiusmod Tempor</a></h4>
-              <p className="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>{/* End Service Item */}
-
-        </div>
-
-      </div>
-
-    </section>{/* /Services Section */}
+    {/* <Services/> */}
+    {/* /Services Section */}
 
     {/* Testimonials Section */}
-    <section id="testimonials" className="testimonials section light-background">
-
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div>{/* End Section Title */}
-
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div className="swiper init-swiper">
-
-          <div className="swiper-wrapper">
-
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <p>
-                  <i className="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i className="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" className="testimonial-img" alt=""/>
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div>{/* End testimonial item */}
-
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <p>
-                  <i className="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i className="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" className="testimonial-img" alt=""/>
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div>{/* End testimonial item */}
-
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <p>
-                  <i className="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i className="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" className="testimonial-img" alt=""/>
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div>{/* End testimonial item */}
-
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <p>
-                  <i className="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i className="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" className="testimonial-img" alt=""/>
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div>{/* End testimonial item */}
-
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <p>
-                  <i className="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i className="bi bi-quote quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" className="testimonial-img" alt=""/>
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div>{/* End testimonial item */}
-
-          </div>
-          <div className="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section>{/* /Testimonials Section */}
+    {/* /Testimonials Section */}
 
     {/* Contact Section */}
     <section id="contact" className="contact section">
@@ -626,11 +246,11 @@ function App() {
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        {/* <p>Feel free to get in touch for any inquiries or collaborations!</p> */}
+        <p>Email functionality is under development.</p>
       </div>{/* End Section Title */}
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
-
         <div className="row gy-4">
 
           <div className="col-lg-5">
@@ -640,7 +260,7 @@ function App() {
                 <i className="bi bi-geo-alt flex-shrink-0"></i>
                 <div>
                   <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>25 Myross Ave, Ascot Vale, Melbourne, VIC</p>
                 </div>
               </div>{/* End Info Item */}
 
@@ -648,7 +268,7 @@ function App() {
                 <i className="bi bi-telephone flex-shrink-0"></i>
                 <div>
                   <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
+                  <p>+61 491 054 006</p>
                 </div>
               </div>{/* End Info Item */}
 
@@ -656,7 +276,7 @@ function App() {
                 <i className="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <p>wha02068@gmail.com</p>
                 </div>
               </div>{/* End Info Item */}
 
@@ -709,173 +329,11 @@ function App() {
   </main>
 
      
-      <Navbar bg="secondary" variant="dark">
-        <Container>
-          <Navbar.Brand   href="/"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Haeun Kim
-          </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link
-              onClick={() => {
-                navigate("/aboutMe");
-              }}
-            >
-              About Me
-            </Nav.Link>
-            <Nav.Link
-              onClick={() => {
-                navigate("/projects");
-              }}
-            >
-              Projects
-            </Nav.Link>
-            {/* <Nav.Link
-              onClick={() => {
-                navigate("/about");
-              }}
-            >
-              Challenge222
-            </Nav.Link> */}
-            <Nav.Link
-              onClick={() => {
-                navigate("/contact");
-              }}
-            >
-              Contact
-            </Nav.Link>
-            {/* <Nav.Link
-              onClick={() => {
-                navigate("/about");
-              }}
-            >
-              E.T.C.
-            </Nav.Link> */}
-          </Nav>
-          <Nav className="ms-auto">
-            {/* {result.isLoading && "로딩중"}
-            {result.error && "에러남"} */}
-            {/* {result.data && result.data.name} */}
-          </Nav>
-        </Container>
-        {/* <Link to="/"> 홈 </Link>
-        <Link to="/detail/0"> 상세 페이지</Link> */}
-      </Navbar>
-      <div
+      {/* <div
         className="main-bg"
         style={{ backgroundImage: "url(" + bg + ")" }}
-      ></div>
+      ></div> */}
            
-      { <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>     
-                <div
-                  className="profile-img"
-                  style={{ backgroundImage: "url(" + profile + ")" }}
-                ></div>
-                <div className="content">
-                  <span className="boldText">Thanks for coming!🙌 </span>
-                  <br/>
-                  My name is <span className="boldText">Haeun</span> 
-                  <br/>
-                  I'm born and bred in Korea.
-                  <br/>
-                  <br/>
-                  My father was a teacher at a computer academy.
-                  <br/>
-                  and due to my fast typing speed, I was able to learn coding quickly. 
-                  <br/>
-                  As a result, I switched majors from corrections to computer science
-                  <br/>
-                  and even took on the role of a teaching assistant.
-                  <br/>
-                  I became the first protege of the compiler professor.
-                  Hello, My name is Haeun Kim.
-
-                I worked as a web developer for 4 years using java, react
-
-                I made some application by kotlin and flutter personally.
-
-                I prefer frontend development because I enjoy creating pretty interface.
-
-
-                I'm a Computer science graduate with a strong passion to work in the develop industry.
-                I worked as a web developer for 4 years.
-                My skills include knowledge of programming languages and good communication.
-                I think completing my duties thoroughly first is the starting point of all success.
-                I am a optimistic person who believes that every problem has its solution.
-                I would describe myself as a person of action because I do what I say I will.
-                  <br/>
-                  <br/>
-                  I made this blog for introducing myself.🎈🦜
-                
-                </div>
-                {/* <Row>
-                  {shoes.map(function (a, i) {
-                    let img =
-                      "https://codingapple1.github.io/shop/shoes" +
-                      (parseInt(i) + 1) +
-                      ".jpg";
-                    return (
-                      <Item
-                        key={i}
-                        i={i}
-                        title={shoes[i].name}
-                        content={shoes[i].content}
-                        price={shoes[i].price}
-                        src={img}
-                      ></Item>
-                    );
-                  })}
-                </Row> */}
-                <br />
-                {/* <button
-                  onClick={() => {
-                    //로딩중 UI 띄우기
-                    axios
-                      .get("https://codingapple1.github.io/shop/data2.json")
-                      .then((data) => {
-                        let copiedShoes = [...shoes, ...data.data];
-                        //copiedShoes.push(...data.data);
-                        setShoes(copiedShoes);
-                        //로딩중 UI숨기기~
-                      })
-                      .catch(() => {
-                        //로딩중 UI 숨기기~
-                        console.log("실패");
-                      });
-
-                    //axios.post("/url", { name: "kim" });
-                  }}
-                >
-                  더보기
-                </button> */}
-              </>
-            }
-          />
-          <Route
-            path="/detail/:id"
-            element={
-              <Context1.Provider value={{ 재고, shoes }}>
-                <Detail shoes={shoes} />
-              </Context1.Provider>
-            }
-          />
-          <Route path="*" element={<div>404</div>} />
-          <Route path="/aboutMe" element={<AboutMe />} />
-          <Route path="member" element={<div>멤버임</div>} />
-          <Route path="location" element={<div>위치정보</div>} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Suspense> }
-      <Container></Container>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 import { createContext, Suspense, useEffect, useState, lazy } from "react";
 import { Navbar, Container, Nav, Row, Col } from "react-bootstrap";
 import bg from "./img/dinosours.jpg";
@@ -7,7 +6,11 @@ import data from "./data";
 import axios from "axios";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { useQuery } from "react-query";
+import Typed from 'typed.js';
+import Header from './components/Header'
 
+import About from './sections/About'
+import Resume from './sections/Resume'
 
 //import Detail from "./pages/Detail";
 //import Cart from "./pages/Cart";
@@ -27,7 +30,7 @@ function App() {
 
   useEffect(() => {
     const headerToggleBtn = document.querySelector('.header-toggle');
-    
+    console.log(headerToggleBtn);
     function headerToggle() {
       document.querySelector('#header').classList.toggle('header-show');
       headerToggleBtn.classList.toggle('bi-list');
@@ -154,63 +157,14 @@ function App() {
 
   return (
     <div className="App">
-        <header id="header" className="header dark-background d-flex flex-column">
-    <i className="header-toggle d-xl-none bi bi-list"></i>
 
-    <div className="profile-img">
-      <img src="assets/img/circledprofile.png" alt="" className="img-fluid rounded-circle"/>
-    </div>
-
-    <a href="index.html" className="logo d-flex align-items-center justify-content-center">
-      {/* Uncomment the line below if you also wish to use an image logo */}
-      {/* <img src="assets/img/logo.png" alt=""/> */}
-      <h1 className="sitename">Haeun Kim</h1>
-    </a>
-
-    <div className="social-links text-center">
-      <a href="#" className="twitter"><i className="bi bi-twitter-x"></i></a>
-      <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>
-      <a href="#" className="instagram"><i className="bi bi-instagram"></i></a>
-      <a href="#" className="google-plus"><i className="bi bi-skype"></i></a>
-      <a href="#" className="linkedin"><i className="bi bi-linkedin"></i></a>
-    </div>
-
-    <nav id="navmenu" className="navmenu">
-      <ul>
-        <li><a href="#hero" className="active"><i className="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="#about"><i className="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#resume"><i className="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="#portfolio"><i className="bi bi-images navicon"></i> Portfolio</a></li>
-        <li><a href="#services"><i className="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li className="dropdown"><a href="#"><i className="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
-          <ul>
-            <li><a href="#">Dropdown 1</a></li>
-            <li className="dropdown"><a href="#"><span>Deep Dropdown</span> <i className="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Deep Dropdown 1</a></li>
-                <li><a href="#">Deep Dropdown 2</a></li>
-                <li><a href="#">Deep Dropdown 3</a></li>
-                <li><a href="#">Deep Dropdown 4</a></li>
-                <li><a href="#">Deep Dropdown 5</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Dropdown 2</a></li>
-            <li><a href="#">Dropdown 3</a></li>
-            <li><a href="#">Dropdown 4</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact"><i className="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
-  </header>
-
+<Header/>
   <main className="main">
-
+    
     {/* Hero Section */}
     <section id="hero" className="hero section dark-background">
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" className=""/>
+      <img src="assets/img/shore.jpg" alt="" data-aos="fade-in" className=""/>
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Haeun Kim</h2>
@@ -219,55 +173,7 @@ function App() {
 
     </section>{/* /Hero Section */}
 
-    {/* About Section */}
-    <section id="about" className="about section">
-
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>{/* End Section Title */}
-
-      <div className="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div className="row gy-4 justify-content-center">
-          <div className="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" className="img-fluid" alt=""/>
-          </div>
-          <div className="col-lg-8 content">
-            <h2>FullStack Web &amp; Application Developer.</h2>
-            <p className="fst-italic py-3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <div className="row">
-              <div className="col-lg-6">
-                <ul>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>9 March 1995</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://kimhaun.github.io/</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+61 491 054 006</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>City:</strong> <span>Melbourne, Australia</span></li>
-                </ul>
-              </div>
-              <div className="col-lg-6">
-                <ul>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Age:</strong> <span>29</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Computer Science</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Email:</strong> <span>wha02068@gmail.com</span></li>
-                  <li><i className="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <p className="py-3">
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </section>{/* /About Section */}
+    <About/>
 
     {/* Stats Section */}
     <section id="stats" className="stats section">
@@ -320,31 +226,28 @@ function App() {
       {/* Section Title */}
       <div className="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>A showcase of my development skills and experience.</p>
       </div>{/* End Section Title */}
 
       <div className="container" data-aos="fade-up" data-aos-delay="100">
-
         <div className="row skills-content skills-animation">
-
           <div className="col-lg-6">
-
             <div className="progress">
-              <span className="skill"><span>HTML</span> <i className="val">100%</i></span>
+              <span className="skill"><span>Java</span> <i className="val">90%</i></span>
               <div className="progress-bar-wrap">
-                <div className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" width="90%"></div>
+                <div className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style={{width:"90%"}}></div>
               </div>
             </div>{/* End Skills Item */}
 
             <div className="progress">
-              <span className="skill"><span>CSS</span> <i className="val">90%</i></span>
+              <span className="skill"><span>JavaScript</span> <i className="val">90%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>{/* End Skills Item */}
 
             <div className="progress">
-              <span className="skill"><span>JavaScript</span> <i className="val">75%</i></span>
+              <span className="skill"><span>React</span> <i className="val">75%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -355,21 +258,21 @@ function App() {
           <div className="col-lg-6">
 
             <div className="progress">
-              <span className="skill"><span>PHP</span> <i className="val">80%</i></span>
+              <span className="skill"><span>Flutter</span> <i className="val">80%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>{/* End Skills Item */}
 
             <div className="progress">
-              <span className="skill"><span>WordPress/CMS</span> <i className="val">90%</i></span>
+              <span className="skill"><span>AWS</span> <i className="val">90%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>{/* End Skills Item */}
 
             <div className="progress">
-              <span className="skill"><span>Photoshop</span> <i className="val">55%</i></span>
+              <span className="skill"><span>SQL</span> <i className="val">55%</i></span>
               <div className="progress-bar-wrap">
                 <div className="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
@@ -382,83 +285,9 @@ function App() {
       </div>
 
     </section>{/* /Skills Section */}
-
-    {/* Resume Section */}
-    <section id="resume" className="resume section">
-
-      {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-      </div>{/* End Section Title */}
-
-      <div className="container">
-
-        <div className="row">
-
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 className="resume-title">Sumary</h3>
-
-            <div className="resume-item pb-0">
-              <h4>Brandon Johnson</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
-              <ul>
-                <li>Portland par 127,Orlando, FL</li>
-                <li>(123) 456-7891</li>
-                <li>alice.barkley@example.com</li>
-              </ul>
-            </div>{/* Edn Resume Item */}
-
-            <h3 className="resume-title">Education</h3>
-            <div className="resume-item">
-              <h4>Master of Fine Arts &amp; Graphic Design</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
-            </div>{/* Edn Resume Item */}
-
-            <div className="resume-item">
-              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
-              <h5>2010 - 2014</h5>
-              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
-              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
-            </div>{/* Edn Resume Item */}
-
-          </div>
-
-          <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 className="resume-title">Professional Experience</h3>
-            <div className="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
-              <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
-              </ul>
-            </div>{/* Edn Resume Item */}
-
-            <div className="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
-              <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
-              </ul>
-            </div>{/* Edn Resume Item */}
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>{/* /Resume Section */}
+    
+    {/* /Resume Section */}
+    <Resume/>
 
     {/* Portfolio Section */}
     <section id="portfolio" className="portfolio section light-background">
